@@ -1,0 +1,13 @@
+C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Release\netcoreapp3.1\PubTmp\Out\CurrencyConverter.exe
+C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Release\netcoreapp3.1\PubTmp\Out\Currency.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Release\netcoreapp3.1\PubTmp\Out\CurrencyLatest.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Release\netcoreapp3.1\PubTmp\Out\Data\2022-09-29.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Release\netcoreapp3.1\PubTmp\Out\Data\2022-09-30.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Release\netcoreapp3.1\PubTmp\Out\Data\2022-10-01.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Release\netcoreapp3.1\PubTmp\Out\CurrencyConverter.dll
+C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Release\netcoreapp3.1\PubTmp\Out\CurrencyConverter.deps.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Release\netcoreapp3.1\PubTmp\Out\CurrencyConverter.runtimeconfig.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Release\netcoreapp3.1\PubTmp\Out\CurrencyConverter.pdb
+C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.dll
