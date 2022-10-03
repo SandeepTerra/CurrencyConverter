@@ -33,25 +33,6 @@ namespace CurrencyConverter.Controllers
                 return (currencies);
         }
 
-        
-        [HttpGet("{code}")]
-        public ActionResult<Currency> Get(string code)
-        {
-            if (code.Length != 3) return BadRequest($"400 Error (Bad Request): Currency Code \"{code}\" not valid.");
-            code = code.ToUpper();
-            var currencies = _currencyLookup.Currencies;
-            Currency currency = currencies.Find(curr => curr.code == code);
-            if (currency != null)
-            {
-                
-                return currency;
-            }
-            else
-            {
-                return NotFound($"404 Error (Not Found): Currency Code \"{code}\" could not be found.");
-            }
-        }
-
         // GET api/currency/usd/eur
         // Return Conversion Rate (1 unit of code1 is equal to _ units of code2)
         [HttpGet("{code1}/{code2}/{num}")]
