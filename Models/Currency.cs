@@ -78,7 +78,7 @@ namespace CurrencyConverter.Models
         {
             //Get 10 records
             _historyData = new List<CurrencyData>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 11; i++)
             {
                 DateTime dt = DateTime.Today.AddDays(-i);
                 string fileName = dt.ToString("yyyy-MM-dd");
@@ -124,4 +124,14 @@ namespace CurrencyConverter.Models
         public List<CurrencyData> HistoryData => _historyData;
     }
 
+    public class HistoryData 
+    {
+        public string baseCur { get; set; }
+
+        public string exchangeCur { get; set; }
+
+        public string date { get; set; }
+
+        public double value { get; set; }
+    }
 }

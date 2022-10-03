@@ -89,7 +89,7 @@ namespace CurrencyConverter.Controllers
 
 
         [HttpGet("history/{code1}/{code2}")]
-        public ActionResult<object> Get(string code1, string code2)
+        public ActionResult<List<HistoryData>> Get(string code1, string code2)
         {
             if (code1.Length != 3) return BadRequest($"400 Error (Bad Request): Currency Code \"{code1}\" not valid.");
             if (code2.Length != 3) return BadRequest($"400 Error (Bad Request): Currency Code \"{code2}\" not valid.");
@@ -98,30 +98,19 @@ namespace CurrencyConverter.Controllers
             code2 = code2.ToUpper();
 
             List<CurrencyData> lst = _currenciesData.HistoryData;
-            
-            List<object> history = new List<object>();
+
+            List<HistoryData> history = new List<HistoryData>();
             
             foreach (CurrencyData crt in lst)
             {
                 var cur1 = crt.rates.FirstOrDefault(cur => cur.Key == code1);
                 var cur2 = crt.rates.FirstOrDefault(cur => cur.Key == code2);
                 double convertedCurrency = (1 / cur1.Value) * cur2.Value;
-                history.Add(new { baseCur = cur1.Key, exchangeCur = cur2.Key, date = crt.date, value = Math.Round(convertedCurrency, 5) });
+                history.Add(new HistoryData { baseCur = cur1.Key, exchangeCur = cur2.Key, date = crt.date, value = Math.Round(convertedCurrency, 2) });
             }
 
             return history;
-            //else if (currency1 != null && currency2 == null)
-            //{
-            //    return NotFound($"404 Error (Not Found): Currency Code \"{code2}\" could not be found.");
-            //}
-            //else if (currency1 == null && currency2 != null)
-            //{
-            //    return NotFound($"404 Error (Not Found): Currency Code \"{code1}\" could not be found.");
-            //}
-            //else
-            //{
-            //    return NotFound($"404 Error (Not Found): Currency Code \"{code1}\" & \"{code2}\" could not be found.");
-            //}
+            
         }
     }
 }
