@@ -5,7 +5,6 @@ C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Debug\netcoreapp3.1\Currency
 C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\Currency.json
-C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\CurrencyLatest.json
 C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\Data\2022-09-29.json
 C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\Data\2022-09-30.json
 C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\Data\2022-10-01.json
@@ -24,4 +23,11 @@ C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Debug\netcoreapp3.1\Currency
 C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Debug\netcoreapp3.1\CurrencyConverter.dll
 C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Debug\netcoreapp3.1\CurrencyConverter.pdb
 C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Debug\netcoreapp3.1\CurrencyConverter.genruntimeconfig.cache
-C:\Users\Sandeep\source\repos\CurrencyConverter\obj\Debug\netcoreapp3.1\CurrencyConverter.csproj.AssemblyReference.cache
+C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\Data\2022-09-23.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\Data\2022-09-24.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\Data\2022-09-25.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\Data\2022-09-26.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\Data\2022-09-27.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\Data\2022-09-28.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\Data\2022-10-02.json
+C:\Users\Sandeep\source\repos\CurrencyConverter\bin\Debug\netcoreapp3.1\Data\2022-10-03.json

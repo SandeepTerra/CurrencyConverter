@@ -33,35 +33,6 @@ namespace CurrencyConverter
             services.AddSingleton<ICurrencyLookup, CurrencyLookup>();
             services.AddScoped<ICurrenciesData, CurrenciesData>();
 
-            //DownloadData();
-
-        }
-
-        private void DownloadData()
-        {
-            //DateTime dt = DateTime.Today - 1;
-            for (int i = 0; i < 10; i++)
-            {
-                DateTime dt = DateTime.Today.AddDays(-i);
-                string histy = dt.ToString("yyyy-MM-dd");
-
-                string filepath = Path.Combine("Data", histy + ".json");
-                if (!File.Exists(filepath))
-                {
-                    var wbc = new WebClient();
-                    wbc.Headers.Add("apikey", "6IJLr7E5CLFVMaeYarVAFv1QxzCdckcx");
-                    string json = wbc.DownloadString("https://api.apilayer.com/fixer/" + histy);
-                    //if (i == 0)
-                    //    json = wbc.DownloadString("https://api.apilayer.com/fixer/latest" + histy);
-                    //else
-                    //    json = wbc.DownloadString("https://api.apilayer.com/fixer/" + histy);
-                    File.WriteAllText(filepath, json);
-                }
-            }
-            
-            ////generate api key https://fixer.io/documentation
-            
-            //return json;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

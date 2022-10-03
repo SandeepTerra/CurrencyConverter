@@ -40,9 +40,6 @@ namespace CurrencyConverter.Models
         public List<Currency> Currencies => _lstCur;
     }
 
-
-    
-
     public class CurrencyData
     {
 
@@ -52,12 +49,6 @@ namespace CurrencyConverter.Models
 
         public string date { get; set; }
         public Dictionary<string, double> rates { get; set; }
-
-        public double GetCurrencyRate(string currencyCode)
-        {
-            var cur = rates.FirstOrDefault(cur => cur.Key == currencyCode);
-            return cur.Value;
-        }
 
         public double ExchangeRate(string currencyCode1, string currencyCode2)
         {
@@ -70,7 +61,6 @@ namespace CurrencyConverter.Models
         }
 
     }
-
 
     public interface ICurrenciesData
     {
@@ -86,23 +76,46 @@ namespace CurrencyConverter.Models
         private List<CurrencyData> _historyData;
         public CurrenciesData()
         {
+            //Get 10 records
             _historyData = new List<CurrencyData>();
-            string[] jfiles = Directory.GetFiles("Data", "*.json");
-            string todayfile = Path.Combine("Data", DateTime.Today.ToString("yyyy-MM-dd") + ".json");
-            foreach (string path in jfiles)
+            for (int i = 0; i < 10; i++)
             {
-                using (StreamReader r = new StreamReader(path))
+                DateTime dt = DateTime.Today.AddDays(-i);
+                string fileName = dt.ToString("yyyy-MM-dd");
+                string filePath = Path.Combine("Data", fileName + ".json");
+                if (!File.Exists(filePath))
+                {
+                    DownloadData(fileName, filePath);
+                }
+                using (StreamReader r = new StreamReader(filePath))
                 {
                     string json = r.ReadToEnd();
-                    if (path != todayfile)
-                    {
-                        _historyData.Add(JsonConvert.DeserializeObject<CurrencyData>(json));
-                    }
-                    else
+                    if (i == 0)
                     {
                         _curenctData = JsonConvert.DeserializeObject<CurrencyData>(json);
                     }
+                    else
+                    {
+                        _historyData.Add(JsonConvert.DeserializeObject<CurrencyData>(json));
+                    }
                 }
+            }
+        }
+
+        private void DownloadData(string fileName, string filePath)
+        {
+            try
+            {
+                var wbc = new WebClient();
+                wbc.Headers.Add("apikey", "6IJLr7E5CLFVMaeYarVAFv1QxzCdckcx");
+                string json = wbc.DownloadString("https://api.apilayer.com/fixer/" + fileName);
+                CurrencyData data = JsonConvert.DeserializeObject<CurrencyData>(json);
+                if (data.success)
+                    File.WriteAllText(filePath, json);
+            }
+            catch (Exception ex)
+            {
+                
             }
         }
 
@@ -110,7 +123,5 @@ namespace CurrencyConverter.Models
 
         public List<CurrencyData> HistoryData => _historyData;
     }
-
-
 
 }
